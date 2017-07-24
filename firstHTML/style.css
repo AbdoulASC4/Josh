@@ -1,0 +1,14 @@
+body {
+    background-color: purple;
+    font-size-adjust: 60px;
+}
+p.oblique {
+    font-style: oblique;
+}
+
+img{
+    border:solid 5px;
+}
+h1{
+    border: solid 10px;
+}
