@@ -1,0 +1,23 @@
+{
+  "name": "josh",
+  "version": "1.0.0",
+  "description": "",
+  "main": "josh.js",
+  "dependencies": {
+    "prompt-sync": "^4.1.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josh5agee/josh.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/josh5agee/josh/issues"
+  },
+  "homepage": "https://github.com/josh5agee/josh#readme"
+}
