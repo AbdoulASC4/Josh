@@ -1,10 +1,49 @@
 <!DOCTYPE html>
 <html>
 <body>
+   <style>
+
+       body{
+           background-color: white;
+       }
+       h1{
+           color: black;
+           text-align: center;
+       }
+       p{
+           font-family: Impact;
+           font-size: 20px;
+       }
+   
+   </style>
 
 <h1>Rock Paper Scissors</h1>
 <script src ="main.js"></script>
-<p id="demo">Play a game of Rock Paper Scissors against the computer.</p>
+
+<div class="game">
+  <strong>choose:</strong>
+  <br />
+  <button onclick="userChose('rock')">&#x26f0;</button>
+  <button onclick="userChose('paper')">&#x1f4ce;</button>
+  <button onclick="userChose('scissor')">&#x2704;</button>
+  <div class="result" id="result">&nbsp;</div>
+  <style>
+      h1{
+          color:black;
+          text-align: center;
+      }
+      p{
+          font-family: impact;
+      }
+  </style>
+</div>
+
+<div class="notes" id="notes">score:&nbsp;<span id="score">0/0</span> &bull;
+  <button id="reset">reset</button>
+</div>
+
+<div>
+    <p>Your Initials:</p><input id="name" type="text"></div>     
  
 
 <button type="button" onclick="myFunction()">Start game</button>

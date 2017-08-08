@@ -1,53 +1,71 @@
-function myFunction() {
-    var userChoice = prompt(" rock, paper or scissors?").toLowerCase();
+var score = 0;
+var games = 0;
+var userChoice = "";
+var computerChoice = 0;
 
-var computerChoice = Math.random();
-
-if (computerChoice < 0.34) {
- computerChoice = "rock";
-} else if(computerChoice <= 0.67) {
- computerChoice = "paper";
-} else {
- computerChoice = "scissors";
-} 
-
-document.write("Computer chose: " + computerChoice);
-document.write("<br>");
-document.write("You chose: " + userChoice);
-document.write("<br>");
-
-var compare = function(choice1, choice2) {
-    if (choice1 === choice2) {
-        return "You tied! try again.";
-        prompt("Do you choose rock, paper or scissors?").toLowerCase();
-    }
-    else if (choice1 === "rock") {
-        if(choice2 === "scissors") {
-            return "rock wins";
-        }
-        else {
-            return "paper wins";
-        }   
-    } 
-    else if (choice1 === "paper") {
-        if(choice2 === "rock") {
-            return "paper wins";
-        }
-        else {
-            return "scissors win";
-        }
-    }
-    else if (choice1 === "scissors") {
-        if (choice2 === "rock") {
-            return "rock wins";
-        }
-        else { 
-            return "scissors win";
-        }
-    }
-   else {
-       return "I'm sorry that is not a valid answer."
-   }
-    };
-    document.write(compare(userChoice, computerChoice));
+function printer(msg) {
+  document.getElementById('result').innerHTML = msg;
+  document.getElementById('score').innerHTML = score + "/" + games;
 }
+
+document.getElementById('reset').onclick = function() {
+  score = 0;
+  games = 0;
+  printer("&nbsp;");
+}
+
+
+function userChose(choice){
+	userChoice = choice;
+ 	compare(userChoice, compChoose());
+}
+
+
+function compChoose() {
+  computerChoice = Math.random();
+  if (computerChoice < 0.34) {
+    computerChoice = "rock";
+  } else if (computerChoice < 0.67) {
+    computerChoice = "paper";
+  } else {
+    computerChoice = "scissor";
+  }
+  return computerChoice;
+}
+
+
+function compare(user, comp) {
+  var result = "";
+  if (user === comp) {
+
+    result = "tie";
+  } else if (user === "rock") {
+    games++;
+    if (comp === "paper") {
+      result = "i chose paper. you lose."
+    } else {
+      result = "i chose scissor. you win."
+      score++;
+    }
+  } else if (user === "paper") {
+    games++;
+    if (comp === "scissor") {
+      result = "i chose scissor. you lose."
+    } else {
+      result = "i chose rock. you win."
+      score++;
+    }
+  } else {
+    games++;
+    if (comp === "rock") {
+      result = "i chose rock. you lose."
+    } else {
+      result = "i chose paper. you win."
+      score++;
+    }
+  }
+  printer(result);
+}
+
+
+
