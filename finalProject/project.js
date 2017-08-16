@@ -1,3 +1,4 @@
+alert(123);
 var url = "https://api.edamam.com/search?key=";
 var key = "a670bf11c7898288386dbde2f1dad80f"
 var appid= "3ce69ad1"
