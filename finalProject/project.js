@@ -35,8 +35,8 @@ $.ajax({
        var ingredient = (data.hits[counter].recipe.ingredientLines);
        var recipe1 = (data.hits[counter].recipe.url);
        console.log(recipe);
-       
-        $(".santa").append("<h1>Name: " +name+ "</h1>");
+        
+        $(".santa").append("<h1>Name: " +name+ "</h1>")
         $(".santa").append("<h1>calories:" +calories+ "</h1>");
         $(".santa").append("<h1>recipe: " +recipe1+ "</h1>");
         $(".santa").append("<h1>allergies " +allergies+"</h1>")
